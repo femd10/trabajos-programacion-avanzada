@@ -1,0 +1,36 @@
+body {
+	background-color: #AAAAFF;
+	font-size: 12px;
+}
+
+h1 {
+	color: #0000FF;
+	text-align: center;
+}
+
+table {
+	border: #0055FF 1px solid;
+}
+
+td {
+	border: #003399 1px solid;
+	background-color: #555599;
+	color: #FFFFFF;
+}
+
+.titulo_tabla {
+	text-align: center;
+	color: #FF0000;
+	font-size: 20px;
+}
+
+.imagen_tabla {
+	text-align: center;
+	color: #AAAAFF;
+}
+.texto_tabla {
+	text-align: center;
+	background-color: #FFFFFF;
+	color: #5555FF;
+}
+
