@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida Generada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hoja de Vida Generada</h1>
+            <h2>Estos son los datos que ingresaste</h2>
+        </div>
+
+        <div id="cvContent">
+
+        </div>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const queries = queryString.split("&");
+            queries.forEach(function(query) {
+                const pair = query.split("=");
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+            });
+            return params;
+        }
+
+        function populateCV() {
+            const params = getQueryParams();
+            const cvContent = document.getElementById('cvContent');
+
+            const sections = [
+                { title: "Información Personal", fields: { "name": "Nombre Completo", "dob": "Fecha de Nacimiento", "gender": "Sexo" } },
+                { title: "Información de Contacto", fields: { "phone": "Teléfono", "email": "Email", "address": "Dirección" } },
+                { title: "Resumen Profesional", fields: { "summary": "Resumen" } },
+                { title: "Experiencia Laboral", fields: { "job1": "Puesto Anterior", "company1": "Empresa", "dates1": "Fechas", "description1": "Descripción de Responsabilidades", "job2": "Puesto Anterior", "company2": "Empresa", "dates2": "Fechas", "description2": "Descripción de Responsabilidades" } },
+                { title: "Educación", fields: { "edu1": "Título Académico", "institution1": "Institución", "year1": "Año de Finalización", "edu2": "Título Académico", "institution2": "Institución", "year2": "Año de Finalización" } },
+                { title: "Habilidades", fields: { "skills": "Habilidades" } },
+                { title: "Idiomas", fields: { "languages": "Idiomas" } },
+            ];
+
+            sections.forEach(section => {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.classList.add('section');
+
+                const title = document.createElement('h3');
+                title.textContent = section.title;
+                sectionDiv.appendChild(title);
+
+                for (const [field, label] of Object.entries(section.fields)) {
+                    if (params[field]) {
+                        const labelElement = document.createElement('label');
+                        labelElement.textContent = label;
+                        sectionDiv.appendChild(labelElement);
+
+                        const paragraph = document.createElement('p');
+                        paragraph.textContent = params[field];
+                        sectionDiv.appendChild(paragraph);
+                    }
+                }
+
+                cvContent.appendChild(sectionDiv);
+            });
+        }
+
+        populateCV();
+    </script>
+</body>
+</html>
