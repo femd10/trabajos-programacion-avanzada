@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #000000; /* Color de fuente negro */
+    background-color: #FFFACD; /* Color de fondo amarillo pastel */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #87CEFA; /* Color de fondo celeste del formulario */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los encabezados */
+.header h1, .header h2 {
+    text-align: center;
+    color: #000000;
+}
+
+/* Estilos para las secciones del formulario */
+.section {
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+/* Estilos para los inputs y textareas */
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #5A9BD3;
+}
+
+/* Estilos específicos para la hoja de vida generada */
+#cvContent {
+    background-color: #FFFFFF; /* Fondo blanco para simular papel */
+    padding: 20px;
+    border: 1px solid #000000; /* Borde negro para el aspecto de impresión */
+    border-radius: 5px;
+}
+
+#cvContent h3 {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#cvContent p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #000000;
+}
+
+label {
+    font-weight: bold;
+    color: #000000;
+}
