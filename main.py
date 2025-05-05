@@ -1,5 +1,5 @@
 
-from utils import init, register, login, crear_nota, listar_notas, leer_nota, editar_nota, eliminar_nota, contar_notas, exportar_pdf
+from utils import *
 from getpass import getpass
 
 def menu_principal(username):
